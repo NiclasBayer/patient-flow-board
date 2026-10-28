@@ -186,3 +186,44 @@ button { font: inherit; cursor: pointer; }
   .bottom { grid-template-columns: 1fr; }
   .lanes { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
+
+/* Mobile */
+@media (max-width: 760px) {
+  .app { padding: 10px 10px 20px; }
+  .top { flex-direction: column; align-items: stretch; gap: 12px; padding: 12px 14px; border-radius: 14px; }
+  .brand-name { font-size: 20px; }
+  .brand-sub { font-size: 12px; }
+  .top-right { flex-wrap: wrap; gap: 8px; }
+  .clock { font-size: 22px; padding: 0 4px; margin-right: auto; }
+  .top .btn { padding: 8px 11px; font-size: 13px; }
+  .top .btn.warn { order: 5; flex: 1 1 100%; padding: 11px; }
+
+  .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 12px 0; }
+  .kpi { padding: 11px 12px; }
+  .kpi-label { font-size: 11px; letter-spacing: 0.4px; }
+  .kpi-value { font-size: 26px; }
+  .kpi-sub { font-size: 12px; }
+
+  .card { padding: 14px 12px; border-radius: 14px; }
+  .card-head { flex-wrap: wrap; }
+  .legend { gap: 8px; font-size: 11px; }
+
+  /* Lanes werden zu wischbaren Spalten */
+  .lanes {
+    grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 82%;
+    overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+    margin: 0 -12px; padding: 0 12px 6px; scroll-padding: 0 12px;
+  }
+  .lane { min-height: 0; scroll-snap-align: start; }
+  .lane-body { max-height: 380px; }
+
+  .layout, .bottom { grid-template-columns: minmax(0, 1fr); }
+  .layout > *, .bottom > *, .side > * { min-width: 0; }
+  .layout, .side, .bottom { gap: 12px; }
+  .bottom { margin-top: 12px; }
+  .fc-num { font-size: 32px; min-width: 52px; }
+
+  .modal { padding: 18px; border-radius: 16px; max-height: 90vh; overflow-y: auto; }
+  .modal-actions { flex-wrap: wrap; }
+  .modal-actions .btn { flex: 1; }
+}
